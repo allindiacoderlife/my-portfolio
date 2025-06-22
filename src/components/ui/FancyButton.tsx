@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { BsArrowRightShort } from "react-icons/bs";
 
@@ -28,7 +28,7 @@ export function FancyButtonAlt({
   link,
 }: {
   title: string;
-  icon?: JSX.Element;
+  icon?: React.ReactNode;
   link?: string;
 }) {
   const [emailCopied, setEmailCopied] = useState(false);
@@ -40,7 +40,7 @@ export function FancyButtonAlt({
 
     if (title == "Copy Email") {
       if (navigator.clipboard) {
-        navigator.clipboard.writeText("chrysayita@gmail.com");
+        navigator.clipboard.writeText("chiragsaxena728@gmail.com");
         setEmailCopied(true);
       } else {
         alert("Cannot perform operation on this system");
