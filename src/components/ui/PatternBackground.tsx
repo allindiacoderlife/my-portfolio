@@ -1,7 +1,5 @@
 "use client";
 import { useEffect } from "react";
-
-// const color = "#61cc9c";
 const color = "#CBACF9";
 
 function PatternBackground() {
@@ -50,7 +48,8 @@ function PatternBackground() {
     <div
       className="fixed top-0 left-0 w-screen h-screen overflow-hidden flex items-center justify-center"
       style={{
-        backgroundImage: "url('/assets/vector_bg.svg')",
+        backgroundImage: "url('/my-portfolio/assets/vector_bg.svg')",
+        // backgroundImage: `url('src/assets/assets/vector_bg.svg')`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "50% 50%",
