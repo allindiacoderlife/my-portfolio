@@ -185,7 +185,7 @@ const BentoGrid = memo(function BentoGrid() {
           <Link
             download={true}
             target="_blank"
-            href={`${store.basePath}/resume.pdf`}
+            href={`/resume.pdf`}
             className="flex xl:hidden"
           >
             <FancyButtonAlt icon={<PiFilePdfFill />} title="Download Resume" />
@@ -237,7 +237,7 @@ const BentoGrid = memo(function BentoGrid() {
 
         <Link
           target="_blank"
-          href={`${store.basePath}/resume.pdf`}
+          href={`/resume.pdf`}
           download={true}
           className="flex flex-col mt-auto"
         >
