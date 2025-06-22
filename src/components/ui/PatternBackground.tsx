@@ -1,6 +1,8 @@
 "use client";
 import { useEffect } from "react";
+import { store } from "@/lib/store";
 const color = "#CBACF9";
+
 
 function PatternBackground() {
   const fillPath = (paths: NodeListOf<SVGPathElement>) => {
@@ -48,8 +50,7 @@ function PatternBackground() {
     <div
       className="fixed top-0 left-0 w-screen h-screen overflow-hidden flex items-center justify-center"
       style={{
-        backgroundImage: "url('/my-portfolio/assets/vector_bg.svg')",
-        // backgroundImage: `url('src/assets/assets/vector_bg.svg')`,
+        backgroundImage: `url('${store.basePath}/assets/vector_bg.svg')`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "50% 50%",

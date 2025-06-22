@@ -16,6 +16,7 @@ import {
 import { motion } from "motion/react";
 import Marquee from "@/components/Marquee"
 import GhostAni from "@/components/ui/GhostAni";
+import { store } from "@/lib/store";
 
 const techStack = {
   primary: ["Solid", "React", "Next", "Node", "Express", "MongoDB"],
@@ -60,7 +61,7 @@ const BentoGrid = memo(function BentoGrid() {
         <div
           className="absolute inset-0 opacity-10"
           style={{
-            backgroundImage: "url('/assets/illustration-alt.png')",
+            backgroundImage: `url('${store.basePath}/assets/illustration-alt.png')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -85,7 +86,7 @@ const BentoGrid = memo(function BentoGrid() {
           <div
             className="absolute inset-0 opacity-10"
             style={{
-              backgroundImage: "url('/assets/address-illustration.png')",
+              backgroundImage: `url('${store.basePath}/assets/address-illustration.png')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -184,7 +185,7 @@ const BentoGrid = memo(function BentoGrid() {
           <Link
             download={true}
             target="_blank"
-            href={"/resume.pdf"}
+            href={`${store.basePath}/resume.pdf`}
             className="flex xl:hidden"
           >
             <FancyButtonAlt icon={<PiFilePdfFill />} title="Download Resume" />
@@ -227,7 +228,7 @@ const BentoGrid = memo(function BentoGrid() {
         <div
           className="flex-1 w-[65%] mt-1 mb-0 mx-auto"
           style={{
-            backgroundImage: "url('/assets/res_illustration.png')",
+            backgroundImage: `url('${store.basePath}/assets/res_illustration.png')`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundPosition: "top",
@@ -236,7 +237,7 @@ const BentoGrid = memo(function BentoGrid() {
 
         <Link
           target="_blank"
-          href="/resume.pdf"
+          href={`${store.basePath}/resume.pdf`}
           download={true}
           className="flex flex-col mt-auto"
         >
