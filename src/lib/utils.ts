@@ -9,6 +9,8 @@ import { AiFillInstagram } from "react-icons/ai";
 import { Color } from "three";
 import { color } from "motion";
 import { link } from "fs";
+import { store } from "@/lib/store";
+
 
 export const navItems = [
   {
@@ -84,93 +86,93 @@ export const socials = [
 export const FrontEndSkills = [
   {
     name: "React",
-    img: "/assets/StackLogos/react.png",
+    img: `${store.basePath}/assets/StackLogos/react.png`,
   },
   {
     name: "Sass",
-    img: "/assets/StackLogos/sass.png",
+    img: `${store.basePath}/assets/StackLogos/sass.png`,
   },
   {
     name: "Figma",
-    img: "/assets/StackLogos/figma.png",
+    img: `${store.basePath}/assets/StackLogos/figma.png`,
   },
   {
     name: "Tailwind",
-    img: "/assets/StackLogos/tailwind.png",
+    img: `${store.basePath}/assets/StackLogos/tailwind.png`,
   },
   {
     name: "Solid",
-    img: "/assets/StackLogos/solidjs.png",
+    img: `${store.basePath}/assets/StackLogos/solidjs.png`,
   },
   {
     name: "Astro",
-    img: "/assets/StackLogos/astro.png",
+    img: `${store.basePath}/assets/StackLogos/astro.png`,
   },
 ];
 export const BackEndSkills = [
   {
     name: "Node",
-    img: "/assets/StackLogos/node.png",
+    img: `${store.basePath}/assets/StackLogos/node.png`,
   },
   {
     name: "Express",
-    img: "/assets/StackLogos/express.png",
+    img: `${store.basePath}/assets/StackLogos/express.png`,
   },
   {
     name: "Next",
-    img: "/assets/StackLogos/next.png",
+    img: `${store.basePath}/assets/StackLogos/next.png`,
   },
   {
     name: "Firebase",
-    img: "/assets/StackLogos/firebase.png",
+    img: `${store.basePath}/assets/StackLogos/firebase.png`,
   },
   {
     name: "Strapi",
-    img: "/assets/StackLogos/strapi.png",
+    img: `${store.basePath}/assets/StackLogos/strapi.png`,
   },
 ];
 export const dbSkills = [
   {
     name: "Postgres",
-    img: "/assets/StackLogos/postgres.png",
+    img: `${store.basePath}/assets/StackLogos/postgres.png`,
   },
   {
     name: "MySQL",
-    img: "/assets/StackLogos/mysql.png",
+    img: `${store.basePath}/assets/StackLogos/mysql.png`,
   },
   {
     name: "Mongo DB",
-    img: "/assets/StackLogos/mongo.png",
+    img: `${store.basePath}/assets/StackLogos/mongo.png`,
   },
   {
     name: "Cloud Firestore",
-    img: "/assets/StackLogos/firestore.png",
+    img: `${store.basePath}/assets/StackLogos/firestore.png`,
   },
   {
     name: "Supabase",
-    img: "/assets/StackLogos/supabase.png",
+    img: `${store.basePath}/assets/StackLogos/supabase.png`,
   },
 ];
 export const otherSkills = [
   {
     name: "Git",
-    img: "/assets/StackLogos/git.png",
+    img: `${store.basePath}/assets/StackLogos/git.png`,
   },
   {
     name: "AWS",
-    img: "/assets/StackLogos/aws.png",
+    img: `${store.basePath}/assets/StackLogos/aws.png`,
   },
   {
     name: "Google Cloud",
-    img: "/assets/StackLogos/gcp.png",
+    img: `${store.basePath}/assets/StackLogos/gcp.png`,
   },
   {
     name: "Spline 3D",
-    img: "/assets/StackLogos/spline.png",
+    img: `${store.basePath}/assets/StackLogos/spline.png`,
   },
   {
     name: "Photoshop",
-    img: "/assets/StackLogos/photoshop.png",
+    img: `${store.basePath}/assets/StackLogos/photoshop.png`,
   },
 ];
 
@@ -178,65 +180,65 @@ export const projects = [
   {
     title: "La Ultimate Collection",
     techs: [
-      "/assets/StackLogos/astro.png",
-      "/assets/StackLogos/sass.png",
-      "/assets/StackLogos/next.png",
-      "/assets/StackLogos/supabase.png",
+      `${store.basePath}/assets/StackLogos/astro.png`,
+      `${store.basePath}/assets/StackLogos/sass.png`,
+      `${store.basePath}/assets/StackLogos/next.png`,
+      `${store.basePath}/assets/StackLogos/supabase.png`
     ],
-    thumbnail: "/assets/ProjectThumbnails/LUC.png",
+    thumbnail: `${store.basePath}/assets/ProjectThumbnails/LUC.png`,
     description: "E-Commerce App",
     link: "https://la-ultimate-collection.vercel.app/",
   },
   {
     title: "Movilla",
     techs: [
-      "/assets/StackLogos/react.png",
-      "/assets/StackLogos/sass.png",
-      "/assets/StackLogos/firebase.png",
+      `${store.basePath}/assets/StackLogos/react.png`,
+      `${store.basePath}/assets/StackLogos/sass.png`,
+      `${store.basePath}/assets/StackLogos/firebase.png`,
     ],
-    thumbnail: "/assets/ProjectThumbnails/movilla.png",
+    thumbnail: `${store.basePath}/assets/ProjectThumbnails/movilla.png`,
     description: "Movie/TV streaming web-app featuring TMDB",
     link: "https://movilla.vercel.app/",
   },
   {
     title: "Revo.Wallet",
     techs: [
-      "/assets/StackLogos/html.png",
-      "/assets/StackLogos/sass.png",
-      "/assets/StackLogos/js.png",
+      `${store.basePath}/assets/StackLogos/html.png`,
+      `${store.basePath}/assets/StackLogos/sass.png`,
+      `${store.basePath}/assets/StackLogos/js.png`
     ],
-    thumbnail: "/assets/ProjectThumbnails/revo.png",
+    thumbnail: `${store.basePath}/assets/ProjectThumbnails/revo.png`,
     description: "FinTech SaaS Landing Page",
     link: "https://revo-wallet.vercel.app/",
   },
   {
     title: "Omini",
-    techs: ["/assets/StackLogos/react.png", "/assets/StackLogos/sass.png"],
-    thumbnail: "/assets/ProjectThumbnails/omini.png",
+    techs: [`${store.basePath}/assets/StackLogos/react.png`,`${store.basePath}/assets/StackLogos/sass.png`],
+    thumbnail: `${store.basePath}/assets/ProjectThumbnails/omini.png`,
     description: "GPT-4o LLM - Landing Page",
     link: "https://omini.vercel.app/",
   },
   {
     title: "Zenchat",
     techs: [
-      "/assets/StackLogos/next.png",
-      "/assets/StackLogos/react.png",
-      "/assets/StackLogos/sass.png",
-      "/assets/StackLogos/firebase.png",
+      `${store.basePath}/assets/StackLogos/next.png`,
+      `${store.basePath}/assets/StackLogos/react.png`,
+      `${store.basePath}/assets/StackLogos/sass.png`,
+      `${store.basePath}/assets/StackLogos/firebase.png`,
     ],
-    thumbnail: "/assets/ProjectThumbnails/z-chat.png",
+    thumbnail: `${store.basePath}/assets/ProjectThumbnails/z-chat.png`,
     description: "chat app",
     link: "https://zenchat.vercel.app/",
   },
   {
     title: "Infinity-Readers Club",
     techs: [
-      "/assets/StackLogos/solidjs.png",
-      "/assets/StackLogos/sass.png",
-      "/assets/StackLogos/supabase.png",
-      "/assets/StackLogos/firebase.png",
+      `${store.basePath}/assets/StackLogos/solidjs.png`,
+      `${store.basePath}/assets/StackLogos/sass.png`,
+      `${store.basePath}/assets/StackLogos/supabase.png`,
+      `${store.basePath}/assets/StackLogos/firebase.png`,
     ],
-    thumbnail: "/assets/ProjectThumbnails/e-book.png",
+    thumbnail: `${store.basePath}/assets/ProjectThumbnails/e-book.png`,
     description: "E-book web-app",
     link: "https://infinity-readers-club.vercel.app/",
   },

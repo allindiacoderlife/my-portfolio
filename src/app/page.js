@@ -23,10 +23,10 @@ export default function Home() {
       <Hero />
       <About />
       <Biography />
-      {/* <TechnicalSkills /> */}
-      {/* <ProjectSection /> */}
+      <TechnicalSkills />
+      <ProjectSection />
       {/* <Certificate /> */}
-      {/* <Contact /> */}
+      <Contact />
     </main>
   );
 }

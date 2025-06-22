@@ -197,7 +197,6 @@ const BentoGrid = memo(function BentoGrid() {
         </div>
 
         <span className="hidden md:flex relative text-sm md:text-base">
-          <RiChatSmile3Line className="inline-block mr-1" />
           @AllindiaCoderLife
         </span>
       </div>
