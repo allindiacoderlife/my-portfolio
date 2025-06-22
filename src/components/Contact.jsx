@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { FancyButtonAlt } from "@/components/ui/FancyButton";
 import { CiMail } from "react-icons/ci";
+import { store } from "@/lib/store";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -23,7 +24,7 @@ function Contact() {
     setIsLoading(true);
 
     try {
-      const res = await fetch("/api/send-email", {
+      const res = await fetch(`${store.basePath}/api/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
