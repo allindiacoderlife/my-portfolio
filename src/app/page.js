@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main className="relative flex min-h-screen flex-col items-center overflow-x-hidden">
       <Navbar />
-      {/* <PatternBackground /> */}
+      <PatternBackground />
       {/* <Spotlight className="-top-8 -left-12 h-[500px] md:h-[700px] md:left-40 lg:left-64" /> */}
       {/* <Spotlight
         className="top-16 -left-16 h-[450px] md:h-[600px] md:-left-8"
