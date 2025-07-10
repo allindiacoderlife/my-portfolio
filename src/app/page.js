@@ -22,11 +22,11 @@ export default function Home() {
       <ScrollIndicator />
       {/* <Hero /> */}
       <About />
-      {/* <Biography /> */}
-      {/* <TechnicalSkills /> */}
-      {/* <ProjectSection /> */}
+      <Biography />
+      <TechnicalSkills />
+      <ProjectSection />
       {/* <Certificate /> */}
-      {/* <Contact /> */}
+      <Contact />
     </main>
   );
 }
