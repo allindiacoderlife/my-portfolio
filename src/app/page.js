@@ -14,14 +14,14 @@ export default function Home() {
     <main className="relative flex min-h-screen flex-col items-center overflow-x-hidden">
       <Navbar />
       <PatternBackground />
-      {/* <Spotlight className="-top-8 -left-12 h-[500px] md:h-[700px] md:left-40 lg:left-64" /> */}
-      {/* <Spotlight
+      <Spotlight className="-top-8 -left-12 h-[500px] md:h-[700px] md:left-40 lg:left-64" />
+      <Spotlight
         className="top-16 -left-16 h-[450px] md:h-[600px] md:-left-8"
         fill="#CBACF9"
-      /> */}
-      {/* <ScrollIndicator /> */}
+      />
+      <ScrollIndicator />
       {/* <Hero /> */}
-      {/* <About /> */}
+      <About />
       {/* <Biography /> */}
       {/* <TechnicalSkills /> */}
       {/* <ProjectSection /> */}
