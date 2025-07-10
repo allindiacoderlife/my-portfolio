@@ -43,17 +43,14 @@ const sacramento = localFont({
 
 const plaster = localFont({
   src: "../../public/LocalFonts/Plaster-Regular.ttf",
-  preload: true,
 });
 
 const stretch = localFont({
   src: "../../public/LocalFonts/StretchPro.otf",
-  preload: true,
 });
 
 const morona = localFont({
   src: "../../public/LocalFonts/Morona.otf",
-  preload: true,
 });
 
 export {
