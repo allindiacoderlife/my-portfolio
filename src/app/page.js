@@ -20,7 +20,7 @@ export default function Home() {
         fill="#CBACF9"
       />
       <ScrollIndicator />
-      {/* <Hero /> */}
+      <Hero />
       <About />
       <Biography />
       <TechnicalSkills />
