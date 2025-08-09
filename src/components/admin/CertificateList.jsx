@@ -29,20 +29,25 @@ const CertificateList = () => {
     }
   };
 
-  const deleteCertificate = async (id) => {
+  const deleteCertificate = async (certificate) => {
+    // Get the ID (either _id from MongoDB or id from mock data)
+    const certificateId = certificate._id || certificate.id;
+    
     if (!confirm('Are you sure you want to delete this certificate?')) {
       return;
     }
 
     try {
-      const response = await fetch(`/api/certificates?id=${id}`, {
+      const response = await fetch(`/api/certificates?id=${certificateId}`, {
         method: 'DELETE',
       });
 
       const data = await response.json();
 
       if (data.success) {
-        setCertificates(certificates.filter(cert => cert.id !== id));
+        setCertificates(certificates.filter(cert => 
+          (cert._id || cert.id) !== certificateId
+        ));
         alert('Certificate deleted successfully');
       } else {
         alert('Error deleting certificate: ' + data.error);
@@ -98,7 +103,7 @@ const CertificateList = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {certificates.map((certificate, index) => (
             <motion.div
-              key={certificate.id}
+              key={certificate._id || certificate.id || index}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
@@ -177,7 +182,7 @@ const CertificateList = () => {
                 )}
                 
                 <button
-                  onClick={() => deleteCertificate(certificate.id)}
+                  onClick={() => deleteCertificate(certificate)}
                   className="flex items-center gap-1 px-3 py-1.5 bg-red-600 hover:bg-red-700 text-white text-xs rounded-lg transition-colors ml-auto"
                 >
                   <FaTrash className="text-xs" />

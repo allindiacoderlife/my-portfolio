@@ -12,7 +12,6 @@ export const metadata = {
   creator: "Chirag Saxena",
   publisher: "Chirag Saxena",
   robots: "index, follow",
-  viewport: "width=device-width, initial-scale=1",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -27,6 +26,11 @@ export const metadata = {
     description: "Professional portfolio showcasing full stack development projects and skills",
     creator: "@chiragsa5",
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }) {
