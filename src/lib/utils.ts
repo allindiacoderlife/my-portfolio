@@ -26,6 +26,10 @@ export const navItems = [
     link: "projects",
   },
   {
+    name: "Certificates",
+    link: "certificates",
+  },
+  {
     name: "Contact",
     link: "contact",
   },
@@ -188,6 +192,20 @@ export const projects = [
     thumbnail: `${store.basePath}/assets/ProjectThumbnails/LUC.png`,
     description: "E-Commerce App",
     link: "https://la-ultimate-collection.vercel.app/",
+    detailedDescription: "A comprehensive e-commerce platform built with modern web technologies. Features include user authentication, product catalog, shopping cart, payment integration, and admin dashboard.",
+    features: [
+      "User Authentication & Authorization",
+      "Product Catalog with Search & Filters",
+      "Shopping Cart & Wishlist",
+      "Secure Payment Integration",
+      "Admin Dashboard",
+      "Responsive Design",
+      "Real-time Inventory Management"
+    ],
+    techStack: ["Astro", "Sass", "Next.js", "Supabase", "Stripe API"],
+    githubLink: "https://github.com/allindiacoderlife/la-ultimate-collection",
+    liveDemo: "https://la-ultimate-collection.vercel.app/",
+    category: "E-Commerce"
   },
   {
     title: "Movilla",
@@ -199,6 +217,20 @@ export const projects = [
     thumbnail: `${store.basePath}/assets/ProjectThumbnails/movilla.png`,
     description: "Movie/TV streaming web-app featuring TMDB",
     link: "https://movilla.vercel.app/",
+    detailedDescription: "A feature-rich movie and TV show streaming platform that provides users with comprehensive entertainment content. Built with React and powered by TMDB API for real-time movie data.",
+    features: [
+      "Browse Movies & TV Shows",
+      "Search & Advanced Filtering",
+      "User Ratings & Reviews",
+      "Watchlist Management",
+      "Trailer Integration",
+      "Responsive Mobile Design",
+      "Real-time Data from TMDB API"
+    ],
+    techStack: ["React", "Sass", "Firebase", "TMDB API", "React Router"],
+    githubLink: "https://github.com/allindiacoderlife/movilla",
+    liveDemo: "https://movilla.vercel.app/",
+    category: "Entertainment"
   },
   {
     title: "Revo.Wallet",
@@ -210,6 +242,20 @@ export const projects = [
     thumbnail: `${store.basePath}/assets/ProjectThumbnails/revo.png`,
     description: "FinTech SaaS Landing Page",
     link: "https://revo-wallet.vercel.app/",
+    detailedDescription: "A modern and sleek landing page for a FinTech SaaS platform. Features smooth animations, responsive design, and compelling call-to-actions to convert visitors into customers.",
+    features: [
+      "Responsive Landing Page Design",
+      "Smooth CSS Animations",
+      "Interactive Elements",
+      "Modern UI/UX Design",
+      "Performance Optimized",
+      "Cross-browser Compatibility",
+      "SEO Optimized"
+    ],
+    techStack: ["HTML5", "Sass", "JavaScript", "CSS Animations"],
+    githubLink: "https://github.com/allindiacoderlife/revo-wallet",
+    liveDemo: "https://revo-wallet.vercel.app/",
+    category: "Landing Page"
   },
   {
     title: "Omini",
@@ -217,6 +263,20 @@ export const projects = [
     thumbnail: `${store.basePath}/assets/ProjectThumbnails/omini.png`,
     description: "GPT-4o LLM - Landing Page",
     link: "https://omini.vercel.app/",
+    detailedDescription: "A sophisticated landing page for GPT-4o LLM platform showcasing AI capabilities and features. Built with React and modern design principles to highlight the power of artificial intelligence.",
+    features: [
+      "AI-powered Interface Design",
+      "Interactive Demonstrations",
+      "Responsive Layout",
+      "Modern UI Components",
+      "Performance Optimized",
+      "Accessibility Features",
+      "SEO Friendly"
+    ],
+    techStack: ["React", "Sass", "JavaScript", "CSS3"],
+    githubLink: "https://github.com/allindiacoderlife/omini",
+    liveDemo: "https://omini.vercel.app/",
+    category: "AI/ML"
   },
   {
     title: "Zenchat",
@@ -229,6 +289,20 @@ export const projects = [
     thumbnail: `${store.basePath}/assets/ProjectThumbnails/z-chat.png`,
     description: "chat app",
     link: "https://zenchat.vercel.app/",
+    detailedDescription: "A real-time chat application built with Next.js and Firebase. Features include instant messaging, user authentication, file sharing, and a clean, intuitive interface for seamless communication.",
+    features: [
+      "Real-time Messaging",
+      "User Authentication",
+      "File & Image Sharing",
+      "Emoji Support",
+      "Online Status Indicators",
+      "Message History",
+      "Responsive Design"
+    ],
+    techStack: ["Next.js", "React", "Sass", "Firebase", "Firestore"],
+    githubLink: "https://github.com/allindiacoderlife/zenchat",
+    liveDemo: "https://zenchat.vercel.app/",
+    category: "Social"
   },
   {
     title: "Infinity-Readers Club",
@@ -241,5 +315,82 @@ export const projects = [
     thumbnail: `${store.basePath}/assets/ProjectThumbnails/e-book.png`,
     description: "E-book web-app",
     link: "https://infinity-readers-club.vercel.app/",
+    detailedDescription: "A comprehensive e-book platform that brings readers together in a digital library. Features book discovery, reading progress tracking, community discussions, and personalized recommendations.",
+    features: [
+      "Digital Library Management",
+      "Reading Progress Tracking",
+      "Book Recommendations",
+      "Community Features",
+      "Search & Filter System",
+      "User Reviews & Ratings",
+      "Responsive Reading Interface"
+    ],
+    techStack: ["SolidJS", "Sass", "Supabase", "Firebase"],
+    githubLink: "https://github.com/allindiacoderlife/infinity-readers-club",
+    liveDemo: "https://infinity-readers-club.vercel.app/",
+    category: "Education"
   },
+];
+
+export const certificates = [
+  {
+    title: "Full Stack Web Development",
+    issuer: "freeCodeCamp",
+    date: "2024",
+    description: "Comprehensive course covering HTML, CSS, JavaScript, React, Node.js, and MongoDB",
+    image: `${store.basePath}/assets/certificates/fullstack-cert.svg`, // placeholder path
+    credentialId: "fcc-cert-001",
+    skills: ["React", "Node.js", "MongoDB", "Express.js", "HTML", "CSS", "JavaScript"],
+    verifyLink: "https://www.freecodecamp.org/certification/example/responsive-web-design"
+  },
+  {
+    title: "React Developer Certification",
+    issuer: "Meta",
+    date: "2024",
+    description: "Advanced React concepts including hooks, context, state management, and testing",
+    image: `${store.basePath}/assets/certificates/react-cert.jpg`, // placeholder path
+    credentialId: "meta-react-001",
+    skills: ["React", "Redux", "React Testing Library", "JavaScript", "TypeScript"],
+    verifyLink: "https://www.coursera.org/account/accomplishments/certificate/example"
+  },
+  {
+    title: "JavaScript Algorithms and Data Structures",
+    issuer: "freeCodeCamp",
+    date: "2023",
+    description: "Comprehensive study of algorithms, data structures, and problem-solving techniques",
+    image: `${store.basePath}/assets/certificates/js-algorithms-cert.jpg`, // placeholder path
+    credentialId: "fcc-js-001",
+    skills: ["JavaScript", "Algorithms", "Data Structures", "Problem Solving"],
+    verifyLink: "https://www.freecodecamp.org/certification/example/javascript-algorithms-and-data-structures"
+  },
+  {
+    title: "AWS Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    date: "2024",
+    description: "Foundational knowledge of AWS cloud services and best practices",
+    image: `${store.basePath}/assets/certificates/aws-cert.jpg`, // placeholder path
+    credentialId: "aws-cp-001",
+    skills: ["AWS", "Cloud Computing", "EC2", "S3", "Lambda"],
+    verifyLink: "https://aws.amazon.com/verification"
+  },
+  {
+    title: "MongoDB Developer Certification",
+    issuer: "MongoDB University",
+    date: "2023",
+    description: "Database design, querying, indexing, and MongoDB best practices",
+    image: `${store.basePath}/assets/certificates/mongodb-cert.jpg`, // placeholder path
+    credentialId: "mongo-dev-001",
+    skills: ["MongoDB", "Database Design", "Aggregation", "Indexing"],
+    verifyLink: "https://university.mongodb.com/certification"
+  },
+  {
+    title: "UI/UX Design Fundamentals",
+    issuer: "Google",
+    date: "2023",
+    description: "User experience design principles, prototyping, and user research methods",
+    image: `${store.basePath}/assets/certificates/ux-cert.jpg`, // placeholder path
+    credentialId: "google-ux-001",
+    skills: ["UI/UX Design", "Figma", "Prototyping", "User Research"],
+    verifyLink: "https://coursera.org/verify/google-ux"
+  }
 ];

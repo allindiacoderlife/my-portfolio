@@ -1,9 +1,25 @@
+"use client";
+import React from "react";
 import { montserrat_alternates, morona } from "@/lib/fonts";
 import { projects } from "@/lib/utils";
 import Link from "next/link";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowRightLong, FaEye } from "react-icons/fa6";
+import { useState } from "react";
+import ProjectModal from "@/components/ui/ProjectModal";
 
 function Projects() {
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedProject(null), 300);
+  };
   return (
     <div
       id="projects"
@@ -62,6 +78,25 @@ function Projects() {
                 ))}
               </div>
 
+              {/* Action Buttons */}
+              <div className="flex gap-3 mb-6">
+                <button
+                  onClick={() => openModal(project)}
+                  className="flex items-center gap-2 px-4 py-2 bg-black/20 hover:bg-black/30 text-black font-medium rounded-lg transition-colors border border-black/20"
+                >
+                  <FaEye className="text-sm" />
+                  View Details
+                </button>
+                <Link 
+                  href={project.link} 
+                  target="_blank"
+                  className="flex items-center gap-2 px-4 py-2 bg-black/80 hover:bg-black text-white font-medium rounded-lg transition-colors"
+                >
+                  <FaArrowRightLong className="text-sm" />
+                  Live Demo
+                </Link>
+              </div>
+
               <div
                 className="flex-1 flex items-center justify-center w-full lg:w-[60%]"
                 style={{
@@ -79,6 +114,13 @@ function Projects() {
       </div>
 
       <HScrollIndicator />
+      
+      {/* Project Details Modal */}
+      <ProjectModal 
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
     </div>
   );
 }

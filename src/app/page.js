@@ -2,13 +2,34 @@ import Navbar from "@/components/Navbar";
 import { Spotlight } from "@/components/ui/Spotlight";
 import Hero from "@/components/Hero.jsx";
 import PatternBackground from "@/components/ui/PatternBackground";
-import About from "@/components/About";
-import Biography from "@/components/Biography";
-import ProjectSection from "@/components/ProjectSection";
-import TechnicalSkills from "@/components/TechnicalSkills";
-import Certificate from "@/components/Certificate";
-import Contact from "@/components/Contact";
 import ScrollIndicator from "@/components/ui/ScrollIndicator";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
+
+// Lazy load components that are not immediately visible
+const About = dynamic(() => import("@/components/About"), {
+  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-pulse bg-gray-800 h-96 w-full max-w-4xl rounded-lg"></div></div>
+});
+
+const Biography = dynamic(() => import("@/components/Biography"), {
+  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-pulse bg-gray-800 h-96 w-full max-w-4xl rounded-lg"></div></div>
+});
+
+const TechnicalSkills = dynamic(() => import("@/components/TechnicalSkills"), {
+  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-pulse bg-gray-800 h-96 w-full max-w-4xl rounded-lg"></div></div>
+});
+
+const ProjectSection = dynamic(() => import("@/components/ProjectSection"), {
+  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-pulse bg-gray-800 h-96 w-full max-w-4xl rounded-lg"></div></div>
+});
+
+const Certificate = dynamic(() => import("@/components/Certificate"), {
+  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-pulse bg-gray-800 h-96 w-full max-w-4xl rounded-lg"></div></div>
+});
+
+const Contact = dynamic(() => import("@/components/Contact"), {
+  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-pulse bg-gray-800 h-96 w-full max-w-4xl rounded-lg"></div></div>
+});
 export default function Home() {
   return (
     <main className="relative flex min-h-screen flex-col items-center overflow-x-hidden">
@@ -21,12 +42,30 @@ export default function Home() {
       />
       <ScrollIndicator />
       <Hero />
-      <About />
-      <Biography />
-      <TechnicalSkills />
-      <ProjectSection />
-      {/* <Certificate /> */}
-      <Contact />
+      
+      <Suspense fallback={<div className="min-h-screen w-full bg-gray-900 animate-pulse" />}>
+        <About />
+      </Suspense>
+      
+      <Suspense fallback={<div className="min-h-screen w-full bg-gray-900 animate-pulse" />}>
+        <Biography />
+      </Suspense>
+      
+      <Suspense fallback={<div className="min-h-screen w-full bg-gray-900 animate-pulse" />}>
+        <TechnicalSkills />
+      </Suspense>
+      
+      <Suspense fallback={<div className="min-h-screen w-full bg-gray-900 animate-pulse" />}>
+        <ProjectSection />
+      </Suspense>
+      
+      <Suspense fallback={<div className="min-h-screen w-full bg-gray-900 animate-pulse" />}>
+        <Certificate />
+      </Suspense>
+      
+      <Suspense fallback={<div className="min-h-screen w-full bg-gray-900 animate-pulse" />}>
+        <Contact />
+      </Suspense>
     </main>
   );
 }

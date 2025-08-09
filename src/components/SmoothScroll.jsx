@@ -4,7 +4,9 @@ import { useEffect } from "react";
 
 const SmoothScroll = () => {
   useEffect(() => {
-    const lenis = new Lenis();
+    const lenis = new Lenis({
+      autoRaf: false,
+    });
 
     lenis.on("scroll", () => {});
 
@@ -19,6 +21,7 @@ const SmoothScroll = () => {
 
     return () => {
       cancelAnimationFrame(animationFrameId);
+      lenis.destroy();
     };
   }, []);
   return <></>;

@@ -1,0 +1,10 @@
+<!-- This is a placeholder certificate image -->
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+  <text x="200" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#495057">Certificate</text>
+  <text x="200" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6c757d">Full Stack Web Development</text>
+  <text x="200" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6c757d">Issued by freeCodeCamp</text>
+  <text x="200" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6c757d">2024</text>
+  <rect x="50" y="200" width="300" height="1" fill="#dee2e6"/>
+  <text x="200" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">This is a placeholder certificate image</text>
+</svg>
