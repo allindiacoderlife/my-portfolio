@@ -1,5 +1,3 @@
-import { transform } from "next/dist/build/swc";
-
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
@@ -7,10 +5,22 @@ const {
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+        "great-vibes": ["'Great Vibes'", "cursive"],
+        "poiret-one": ["'Poiret One'", "cursive"],
+        "montserrat-alternates": ["'Montserrat Alternates'", "sans-serif"],
+        sacramento: ["Sacramento", "cursive"],
+        plaster: ["Plaster", "cursive"],
+        stretch: ["StretchPro", "sans-serif"],
+        morona: ["Morona", "sans-serif"],
+      },
       animation: {
         spotlight: "spotlight 2s ease 1 forwards",
         animateSVG: "animateSVG 5s ease-in-out 1s",
@@ -123,7 +133,6 @@ module.exports = {
   plugins: [addVariablesForColors],
 };
 
-// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
 function addVariablesForColors({ addBase, theme }) {
   let allColors = flattenColorPalette(theme("colors"));
   let newVars = Object.fromEntries(

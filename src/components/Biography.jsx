@@ -1,6 +1,5 @@
 import { plaster } from "@/lib/fonts";
 import BentoGrid from "@/components/ui/BentoGrid";
-import Image from 'next/image';
 import { store } from "@/lib/store";
 
 function Biography() {
@@ -19,13 +18,10 @@ function Biography() {
         </h1>
         <div className="size-[65px] md:size-[100px] md:min-w-[100px] lg:size-[150px] lg:min-w-[150px] rounded-full border-2 border-[#CBACF9] p-[3px] sm:p-[5px]">
       <div className="relative h-full w-full rounded-full border border-white/[40%] overflow-hidden">
-        <Image
+        <img
           src={`${store.basePath}/assets/profile/profile.jpg`}
           alt="Profile picture"
-          fill
-          sizes="(max-width: 768px) 65px, (max-width: 1024px) 100px, 150px"
-          className="object-cover"
-          priority={true}
+          className="absolute inset-0 h-full w-full object-cover"
         />
       </div>
     </div>

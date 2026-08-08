@@ -7,7 +7,6 @@ import { FaRegCopy } from "react-icons/fa6";
 import { socials } from "@/lib/utils";
 import { PiFilePdfFill } from "react-icons/pi";
 import { RiChatSmile3Line } from "react-icons/ri";
-import Link from "next/link";
 import { memo, useMemo } from "react";
 import {
   DynamicGame,
@@ -141,7 +140,7 @@ const BentoGrid = memo(function BentoGrid() {
         <div className="mt-auto h-[40px] md:h-[60px] w-full mb-8 flex justify-center">
           {socials.map(({ name, Icon, color, link }, index) => {
             return (
-              <Link
+              <a
               key={name}
               href={link}
               target="_blank"
@@ -166,7 +165,7 @@ const BentoGrid = memo(function BentoGrid() {
                 transform: `rotate(calc(360 / var(--size) * var(--index) * -1deg))`,
                 }}
               />
-              </Link>
+              </a>
             );
           })}
         </div>
@@ -182,14 +181,14 @@ const BentoGrid = memo(function BentoGrid() {
         </p>
 
         <div className="relative flex gap-4 mt-8 mb-auto">
-          <Link
+          <a
             download={true}
             target="_blank"
             href={`/resume.pdf`}
             className="flex xl:hidden"
           >
             <FancyButtonAlt icon={<PiFilePdfFill />} title="Download Resume" />
-          </Link>
+          </a>
 
           <div className="hidden xl:flex">
             <FancyButtonAlt icon={<FaRegCopy />} title="Copy Email" />
@@ -234,14 +233,14 @@ const BentoGrid = memo(function BentoGrid() {
           }}
         ></div>
 
-        <Link
+        <a
           target="_blank"
           href={`/resume.pdf`}
           download={true}
           className="flex flex-col mt-auto"
         >
           <FancyButtonAlt icon={<PiFilePdfFill />} title="Download" />
-        </Link>
+        </a>
       </div>
     </div>
   );

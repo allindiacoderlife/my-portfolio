@@ -1,5 +1,3 @@
-"use client";
-import Image from 'next/image';
 import { useState } from 'react';
 
 const OptimizedImage = ({ 
@@ -46,14 +44,11 @@ const OptimizedImage = ({
           <div className="w-8 h-8 border-2 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
         </div>
       )}
-      <Image
+      <img
         src={src}
         alt={alt}
         width={width}
         height={height}
-        priority={priority}
-        placeholder={placeholder}
-        blurDataURL={blurDataURL}
         onLoad={handleLoad}
         onError={handleError}
         className={`transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}

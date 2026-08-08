@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { montserrat_alternates, morona } from "@/lib/fonts";
 import { certificates } from "@/lib/utils";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
-import Link from "next/link";
 import { FaExternalLinkAlt, FaCalendarAlt, FaCertificate, FaCheck } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -115,7 +114,7 @@ const Certificate = () => {
                   <div className="flex justify-between items-center gap-2 mt-auto">
                     <CardItem
                       translateZ={20}
-                      as={Link}
+                      as="a"
                       href={cert.verifyLink}
                       target="_blank"
                       className="px-3 md:px-4 py-2 rounded-xl text-xs font-normal dark:text-white bg-black dark:bg-white text-white flex items-center gap-1.5 md:gap-2 hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
@@ -231,7 +230,7 @@ const Certificate = () => {
                   <div className="flex justify-between items-center gap-2 mt-auto">
                     <CardItem
                       translateZ={20}
-                      as={Link}
+                      as="a"
                       href={cert.verifyLink}
                       target="_blank"
                       className="px-3 md:px-4 py-2 rounded-xl text-xs font-normal dark:text-white bg-black dark:bg-white text-white flex items-center gap-1.5 md:gap-2 hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
@@ -324,14 +323,14 @@ const Certificate = () => {
                     <p className="text-sm text-gray-600 dark:text-gray-400">Credential ID</p>
                     <p className="font-mono text-sm text-gray-900 dark:text-white">{selectedCertificate.credentialId}</p>
                   </div>
-                  <Link
+                  <a
                     href={selectedCertificate.verifyLink}
                     target="_blank"
                     className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center gap-2 transition-colors"
                   >
                     <FaExternalLinkAlt className="text-sm" />
                     Verify Certificate
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

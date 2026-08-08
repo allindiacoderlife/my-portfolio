@@ -1,6 +1,4 @@
-"use client";
-import Image from "next/image";
-import { memo, useEffect, useRef, useState } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 
 const SkillRow = memo(function SkillRow({
   skills,
@@ -74,14 +72,13 @@ const SkillRow = memo(function SkillRow({
             animationDelay: `${(index * 30) / skills.length}s`,
           }}
         >
-          <Image
+          <img
             src={skill.img}
             alt={`${skill.name} logo`}
             height={100}
             width={100}
             className="absolute left-2 h-[80%] w-auto object-contain opacity-60"
             loading="lazy"
-            sizes="(max-width: 768px) 150px, 250px"
           />
           <h1 className="z-10">{skill.name}</h1>
         </div>

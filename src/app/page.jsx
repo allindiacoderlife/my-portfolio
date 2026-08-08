@@ -3,33 +3,15 @@ import { Spotlight } from "@/components/ui/Spotlight";
 import Hero from "@/components/Hero.jsx";
 import PatternBackground from "@/components/ui/PatternBackground";
 import ScrollIndicator from "@/components/ui/ScrollIndicator";
-import dynamic from "next/dynamic";
-import { Suspense } from "react";
+import React, { Suspense } from "react";
 
 // Lazy load components that are not immediately visible
-const About = dynamic(() => import("@/components/About"), {
-  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-pulse bg-gray-800 h-96 w-full max-w-4xl rounded-lg"></div></div>
-});
-
-const Biography = dynamic(() => import("@/components/Biography"), {
-  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-pulse bg-gray-800 h-96 w-full max-w-4xl rounded-lg"></div></div>
-});
-
-const TechnicalSkills = dynamic(() => import("@/components/TechnicalSkills"), {
-  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-pulse bg-gray-800 h-96 w-full max-w-4xl rounded-lg"></div></div>
-});
-
-const ProjectSection = dynamic(() => import("@/components/ProjectSection"), {
-  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-pulse bg-gray-800 h-96 w-full max-w-4xl rounded-lg"></div></div>
-});
-
-const Certificate = dynamic(() => import("@/components/Certificate"), {
-  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-pulse bg-gray-800 h-96 w-full max-w-4xl rounded-lg"></div></div>
-});
-
-const Contact = dynamic(() => import("@/components/Contact"), {
-  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-pulse bg-gray-800 h-96 w-full max-w-4xl rounded-lg"></div></div>
-});
+const About = React.lazy(() => import("@/components/About"));
+const Biography = React.lazy(() => import("@/components/Biography"));
+const TechnicalSkills = React.lazy(() => import("@/components/TechnicalSkills"));
+const ProjectSection = React.lazy(() => import("@/components/ProjectSection"));
+const Certificate = React.lazy(() => import("@/components/Certificate"));
+const Contact = React.lazy(() => import("@/components/Contact"));
 export default function Home() {
   return (
     <main className="relative flex min-h-screen flex-col items-center overflow-x-hidden">

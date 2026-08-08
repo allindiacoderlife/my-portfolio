@@ -2,7 +2,6 @@
 import React from "react";
 import { montserrat_alternates, morona } from "@/lib/fonts";
 import { projects } from "@/lib/utils";
-import Link from "next/link";
 import { FaArrowRightLong, FaEye } from "react-icons/fa6";
 import { useState } from "react";
 import ProjectModal from "@/components/ui/ProjectModal";
@@ -48,7 +47,7 @@ function Projects() {
               key={index}
               className="relative min-w-[100%] h-full bg-[#CBACF9] snap-center flex flex-col items-center pt-14 md:pt-[100px] px-2 md:px-4"
             >
-              <Link href="https://github.com/creativeambition" target="_blank">
+              <a href="https://github.com/creativeambition" target="_blank">
                 <div
                   className={`group relative flex items-center gap-2 md:gap-4 text-2xl md:text-5xl lg:text-6xl text-black/[80%] font-bold ${montserrat_alternates.className} font-bold`}
                 >
@@ -57,7 +56,7 @@ function Projects() {
                     <FaArrowRightLong />
                   </div>
                 </div>
-              </Link>
+              </a>
 
               <span className="text-base text-black/[80%] mt-2 max-w-[90%] md:max-w-[65%] lg:max-w-[28%] text-center font-medium">
                 {project.description}
@@ -87,14 +86,14 @@ function Projects() {
                   <FaEye className="text-sm" />
                   View Details
                 </button>
-                <Link 
+                <a 
                   href={project.link} 
                   target="_blank"
                   className="flex items-center gap-2 px-4 py-2 bg-black/80 hover:bg-black text-white font-medium rounded-lg transition-colors"
                 >
                   <FaArrowRightLong className="text-sm" />
                   Live Demo
-                </Link>
+                </a>
               </div>
 
               <div

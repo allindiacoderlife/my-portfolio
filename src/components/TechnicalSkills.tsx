@@ -5,12 +5,7 @@ import {
   otherSkills,
 } from "@/lib/utils";
 
-import dynamic from "next/dynamic";
-
-const SkillRow = dynamic(() => import("./SkillRow"), {
-  ssr: true,
-  loading: null,
-});
+import SkillRow from "./SkillRow";
 
 function TechnicalSkills() {
   return (

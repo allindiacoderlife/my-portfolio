@@ -1,3 +1,29 @@
+/* Local Fonts */
+@font-face {
+  font-family: 'Sacramento';
+  src: url('/LocalFonts/Sacramento-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Plaster';
+  src: url('/LocalFonts/Plaster-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'StretchPro';
+  src: url('/LocalFonts/StretchPro.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Morona';
+  src: url('/LocalFonts/Morona.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

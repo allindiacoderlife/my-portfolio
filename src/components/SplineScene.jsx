@@ -1,5 +1,4 @@
 import { sacramento } from "@/lib/fonts";
-import Image from "next/image";
 import { useState } from "react";
 
 export default function SplineScene() {
@@ -15,13 +14,12 @@ export default function SplineScene() {
           workflow
         </h1>
 
-        <Image
+        <img
           src="/assets/noodle_arrow.svg"
           alt="noodle-arrow"
           width={100}
           height={100}
           className="w-[100px] translate-y-[10px] translate-x-[-20px]"
-          priority={false}
         />
       </div>
 

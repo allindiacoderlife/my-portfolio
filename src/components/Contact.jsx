@@ -3,7 +3,6 @@ import { poiret_one } from "@/lib/fonts";
 import PlaceholderTextAnimation from "./ui/PlaceholderTextAnimation";
 import { contacts } from "@/lib/utils";
 import { BsArrowRight } from "react-icons/bs";
-import Link from "next/link";
 import { useState } from "react";
 import { FancyButtonAlt } from "@/components/ui/FancyButton";
 import { CiMail } from "react-icons/ci";
@@ -151,7 +150,7 @@ function Contact() {
                 ? "hidden md:flex"
                 : "flex";
             return (
-              <Link
+              <a
                 key={contact.name}
                 href={contact.link}
                 target="_blank"
@@ -159,7 +158,7 @@ function Contact() {
               >
                 <span className="">{contact.name}</span>
                 <BsArrowRight className="opacity-0 group-hover:opacity-100 group-hover:translate-x-2 group-hover:-translate-y-1 group-hover:-rotate-[35deg] transition-all" />
-              </Link>
+              </a>
             );
           })}
         </div>

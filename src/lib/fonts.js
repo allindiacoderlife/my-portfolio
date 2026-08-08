@@ -1,66 +1,11 @@
-import {
-  Inter,
-  Poiret_One,
-  Great_Vibes,
-  Montserrat_Alternates,
-  Poppins,
-} from "next/font/google";
-import localFont from "next/font/local";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  fallback: ["sans-serif", "arial"],
-});
-const poppins = Poppins({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["100", "400", "500"],
-  fallback: ["sans-serif", "arial"],
-});
-const great_vibes = Great_Vibes({
-  style: "normal",
-  weight: ["400"],
-  subsets: ["latin"],
-  display: "swap",
-  fallback: ["sans-serif", "arial"],
-});
-const poiret_one = Poiret_One({
-  style: "normal",
-  weight: ["400"],
-  subsets: ["latin"],
-  fallback: ["sans-serif", "arial"],
-});
-const montserrat_alternates = Montserrat_Alternates({
-  style: "normal",
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  fallback: ["sans-serif", "arial"],
-});
-const sacramento = localFont({
-  src: "../../public/LocalFonts/Sacramento-Regular.ttf",
-});
-
-const plaster = localFont({
-  src: "../../public/LocalFonts/Plaster-Regular.ttf",
-});
-
-const stretch = localFont({
-  src: "../../public/LocalFonts/StretchPro.otf",
-});
-
-const morona = localFont({
-  src: "../../public/LocalFonts/Morona.otf",
-});
-
-export {
-  inter,
-  poppins,
-  great_vibes,
-  poiret_one,
-  montserrat_alternates,
-  sacramento,
-  plaster,
-  stretch,
-  morona,
-};
+// Standard font class mappings for Tailwind CSS
+// Instead of Next.js font loaders, we define class names that are styled via global.css / tailwind.config.cjs
+export const inter = { className: "font-inter" };
+export const poppins = { className: "font-poppins" };
+export const great_vibes = { className: "font-great-vibes" };
+export const poiret_one = { className: "font-poiret-one" };
+export const montserrat_alternates = { className: "font-montserrat-alternates" };
+export const sacramento = { className: "font-sacramento" };
+export const plaster = { className: "font-plaster" };
+export const stretch = { className: "font-stretch" };
+export const morona = { className: "font-morona" };

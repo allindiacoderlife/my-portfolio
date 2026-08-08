@@ -1,4 +1,18 @@
-import dynamic from "next/dynamic";
+import React, { Suspense } from "react";
+
+// Custom dynamic loader to mimic next/dynamic in standard React
+const dynamic = (importFunc, options = {}) => {
+  const LazyComponent = React.lazy(importFunc);
+  const LoadingComponent = options.loading || (() => null);
+
+  return function DynamicComponent(props) {
+    return (
+      <Suspense fallback={<LoadingComponent />}>
+        <LazyComponent {...props} />
+      </Suspense>
+    );
+  };
+};
 
 // Game component - heavy 3D component, load when needed
 export const DynamicGame = dynamic(() => import("../components/Game"), {

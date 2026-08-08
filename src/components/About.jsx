@@ -1,8 +1,7 @@
 import { montserrat_alternates, sacramento, stretch } from "@/lib/fonts";
 import AboutCard from "@/components/ui/AboutCard";
-import Image from "next/image";
 import StoryAndDetailsCard from "@/components/StoryAndDetailsCard";
-import me from "../../public/assets/profile/me.jpg";
+const me = "/assets/profile/me.jpg";
 import UselessFacts from "@/components/UselessFacts";
 
 function About() {
@@ -48,7 +47,7 @@ function About() {
 
       <div className="relative min-h-[70vh] md:max-xl:min-h-[90vh] md:flex mt-[250px] md:mt-0 flex-1 mx-auto lg:ml-auto items-center justify-center lg:gap-8 md:px-2 w-full pointer-events-auto">
         <AboutCard detailsCard={false}>
-          <Image
+          <img
             className="test-card absolute w-full h-full top-0 left-0 object-cover"
             src={me}
             alt="me"
