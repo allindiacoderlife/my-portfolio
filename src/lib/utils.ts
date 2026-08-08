@@ -11,7 +11,6 @@ import { color } from "motion";
 import { link } from "fs";
 import { store } from "@/lib/store";
 
-
 export const navItems = [
   {
     name: "Home",
@@ -24,10 +23,6 @@ export const navItems = [
   {
     name: "Projects",
     link: "projects",
-  },
-  {
-    name: "Certificates",
-    link: "certificates",
   },
   {
     name: "Contact",
@@ -182,153 +177,173 @@ export const otherSkills = [
 
 export const projects = [
   {
-    title: "La Ultimate Collection",
+    title: "MaaCubs Healthcare Ecosystem",
     techs: [
-      `${store.basePath}/assets/StackLogos/astro.png`,
-      `${store.basePath}/assets/StackLogos/sass.png`,
-      `${store.basePath}/assets/StackLogos/next.png`,
-      `${store.basePath}/assets/StackLogos/supabase.png`
+      `${store.basePath}/assets/StackLogos/react.png`,
+      `${store.basePath}/assets/StackLogos/tailwind.png`,
+      `${store.basePath}/assets/StackLogos/express.png`,
+      `${store.basePath}/assets/StackLogos/postgres.png`,
+      `${store.basePath}/assets/StackLogos/node.png`,
     ],
-    thumbnail: `${store.basePath}/assets/ProjectThumbnails/LUC.png`,
-    description: "E-Commerce App",
-    link: "https://la-ultimate-collection.vercel.app/",
-    detailedDescription: "A comprehensive e-commerce platform built with modern web technologies. Features include user authentication, product catalog, shopping cart, payment integration, and admin dashboard.",
+    thumbnail: `${store.basePath}/assets/ProjectThumbnails/maacubs.png`,
+    description:
+      "Digital health platform for pregnancy trackers, pediatric vaccination schedules, and doctor consultations.",
+    link: "https://maacubs.com/",
+    detailedDescription:
+      "A comprehensive digital health ecosystem designed for mothers, infants, and medical professionals. Built as a multi-tier platform, it includes a Flutter mobile application for patients & doctors, a React-based administration control center, and an Express/PostgreSQL API backend. The system automates child immunization tracking following clinical guidelines, milestone progression logs, pregnancy readiness roadmaps, and secure doctor credentials verification.",
     features: [
-      "User Authentication & Authorization",
-      "Product Catalog with Search & Filters",
-      "Shopping Cart & Wishlist",
-      "Secure Payment Integration",
+      "Dynamic App Version Control (Optional/Force update gating screen)",
+      "Pediatric Vaccination Scheduling based on IAP Guidelines with mandatory/recommended categorization",
+      "Developmental Milestones Checklist & automated developmental progress score generation",
+      "Pregnancy Readiness Plan with support for checklist, rich-text, and video learning layouts",
+      "Doctor Verification Workflow (Pending -> Approved/Rejected with license review)",
+      "Online consultation fee billing powered by Razorpay payment gateway integration",
+      "Targeted Push Notification Broadcasts filtered by trimester or baby age groups",
+    ],
+    techStack: [
+      "Flutter",
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "Prisma ORM",
+      "PostgreSQL",
+      "Razorpay",
+      "Tailwind CSS",
+    ],
+    githubLink: "https://github.com/allindiacoderlife/maacubs.git",
+    liveDemo: "https://maacubs.com/",
+    category: "HealthTech",
+  },
+  {
+    title: "Spylt-GSAP Animation",
+    techs: [
+      `${store.basePath}/assets/StackLogos/react.png`,
+      `${store.basePath}/assets/StackLogos/gsap.jpg`,
+      `${store.basePath}/assets/StackLogos/tailwind.png`,
+    ],
+    thumbnail: `${store.basePath}/assets/ProjectThumbnails/spyly.png`,
+    description: "Spylt Website",
+    link: "https://spylt-gsap-animation.vercel.app/",
+    detailedDescription:
+      "A comprehensive e-commerce platform built with modern web technologies. Features include user authentication, product catalog, shopping cart, payment integration, and admin dashboard.",
+    features: [
+      "User Authentication",
+      "Product Catalog",
+      "Shopping Cart",
+      "Payment Integration",
       "Admin Dashboard",
       "Responsive Design",
-      "Real-time Inventory Management"
+      "Real-time Data",
     ],
-    techStack: ["Astro", "Sass", "Next.js", "Supabase", "Stripe API"],
-    githubLink: "https://github.com/allindiacoderlife/la-ultimate-collection",
-    liveDemo: "https://la-ultimate-collection.vercel.app/",
-    category: "E-Commerce"
+    techStack: ["React", "GSAP", "Tailwind"],
+    githubLink: "https://github.com/allindiacoderlife/Spylt-Gsap-Animation.git",
+    liveDemo: "https://spylt-gsap-animation.vercel.app/",
+    category: "E-Commerce",
   },
   {
-    title: "Movilla",
+    title: "Insurance Management Platform",
     techs: [
       `${store.basePath}/assets/StackLogos/react.png`,
-      `${store.basePath}/assets/StackLogos/sass.png`,
-      `${store.basePath}/assets/StackLogos/firebase.png`,
+      `${store.basePath}/assets/StackLogos/tailwind.png`,
+      `${store.basePath}/assets/StackLogos/express.png`,
+      `${store.basePath}/assets/StackLogos/postgres.png`,
+      `${store.basePath}/assets/StackLogos/node.png`,
     ],
-    thumbnail: `${store.basePath}/assets/ProjectThumbnails/movilla.png`,
-    description: "Movie/TV streaming web-app featuring TMDB",
-    link: "https://movilla.vercel.app/",
-    detailedDescription: "A feature-rich movie and TV show streaming platform that provides users with comprehensive entertainment content. Built with React and powered by TMDB API for real-time movie data.",
+    thumbnail: `${store.basePath}/assets/ProjectThumbnails/insurance.png`,
+    description:
+      "Centralized system to digitize and simplify insurance operations",
+    link: "https://insurance-management-platform-alpha.vercel.app",
+    detailedDescription:
+      "A comprehensive web-based application designed to digitize and simplify the management of insurance operations. It enables insurance companies, agents, and customers to manage policies, claims, premium payments, and related documents from a centralized and secure system.",
     features: [
-      "Browse Movies & TV Shows",
-      "Search & Advanced Filtering",
-      "User Ratings & Reviews",
-      "Watchlist Management",
-      "Trailer Integration",
-      "Responsive Mobile Design",
-      "Real-time Data from TMDB API"
+      "User Roles & Permissions (Admin, Agent, Customer)",
+      "Policy Management (Templates, Customer Policies)",
+      "Claim Management with Attachment Proof Verification",
+      "Premium Tracking & Payment Collection History",
+      "Document Management (Identity & Policy Papers)",
+      "Reports Dashboard with Metrics Visualizations",
     ],
-    techStack: ["React", "Sass", "Firebase", "TMDB API", "React Router"],
-    githubLink: "https://github.com/allindiacoderlife/movilla",
-    liveDemo: "https://movilla.vercel.app/",
-    category: "Entertainment"
+    techStack: [
+      "React 19",
+      "Express.js",
+      "Prisma ORM",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Redis",
+    ],
+    githubLink:
+      "https://github.com/allindiacoderlife/Insurance-Management-Platform.git",
+    liveDemo: "https://insurance-management-platform-alpha.vercel.app/",
+    category: "FinTech",
   },
   {
-    title: "Revo.Wallet",
+    title: "Quiz Management Platform",
     techs: [
-      `${store.basePath}/assets/StackLogos/html.png`,
-      `${store.basePath}/assets/StackLogos/sass.png`,
-      `${store.basePath}/assets/StackLogos/js.png`
+      `${store.basePath}/assets/StackLogos/react.png`,
+      `${store.basePath}/assets/StackLogos/tailwind.png`,
+      `${store.basePath}/assets/StackLogos/express.png`,
+      `${store.basePath}/assets/StackLogos/postgres.png`,
+      `${store.basePath}/assets/StackLogos/node.png`,
     ],
-    thumbnail: `${store.basePath}/assets/ProjectThumbnails/revo.png`,
-    description: "FinTech SaaS Landing Page",
-    link: "https://revo-wallet.vercel.app/",
-    detailedDescription: "A modern and sleek landing page for a FinTech SaaS platform. Features smooth animations, responsive design, and compelling call-to-actions to convert visitors into customers.",
+    thumbnail: `${store.basePath}/assets/ProjectThumbnails/quiz.png`,
+    description: "Secure role-based online exam & student assessment platform",
+    link: "https://quiz-management-online-assessment-p.vercel.app/",
+    detailedDescription:
+      "A secure, full-stack, role-based online examination and student assessment web application. Designed to manage interactive category-specific quizzes, track student performance, display competitive leaderboards, and prevent client-side answer spoofing through secure backend validation.",
     features: [
-      "Responsive Landing Page Design",
-      "Smooth CSS Animations",
-      "Interactive Elements",
-      "Modern UI/UX Design",
-      "Performance Optimized",
-      "Cross-browser Compatibility",
-      "SEO Optimized"
+      "Role-based authorization (Admin & Student roles)",
+      "Email OTP-powered verification & registration logic",
+      "Anti-cheat timed quiz engine (server-side scoring & key omission)",
+      "Server-side timestamp-validated quiz attempt timers",
+      "Comprehensive Admin CRUD dashboard for categories, questions & quizzes",
+      "Gamified interactive student leaderboards & scoreboard history",
     ],
-    techStack: ["HTML5", "Sass", "JavaScript", "CSS Animations"],
-    githubLink: "https://github.com/allindiacoderlife/revo-wallet",
-    liveDemo: "https://revo-wallet.vercel.app/",
-    category: "Landing Page"
+    techStack: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Tailwind CSS",
+    ],
+    githubLink:
+      "https://github.com/allindiacoderlife/Quiz-Management---Online-Assessment-Platform.git",
+    liveDemo: "https://quiz-management-online-assessment-p.vercel.app/",
+    category: "Education",
   },
   {
-    title: "Omini",
-    techs: [`${store.basePath}/assets/StackLogos/react.png`,`${store.basePath}/assets/StackLogos/sass.png`],
-    thumbnail: `${store.basePath}/assets/ProjectThumbnails/omini.png`,
-    description: "GPT-4o LLM - Landing Page",
-    link: "https://omini.vercel.app/",
-    detailedDescription: "A sophisticated landing page for GPT-4o LLM platform showcasing AI capabilities and features. Built with React and modern design principles to highlight the power of artificial intelligence.",
-    features: [
-      "AI-powered Interface Design",
-      "Interactive Demonstrations",
-      "Responsive Layout",
-      "Modern UI Components",
-      "Performance Optimized",
-      "Accessibility Features",
-      "SEO Friendly"
-    ],
-    techStack: ["React", "Sass", "JavaScript", "CSS3"],
-    githubLink: "https://github.com/allindiacoderlife/omini",
-    liveDemo: "https://omini.vercel.app/",
-    category: "AI/ML"
-  },
-  {
-    title: "Zenchat",
+    title: "Nimbus Keyboards",
     techs: [
       `${store.basePath}/assets/StackLogos/next.png`,
       `${store.basePath}/assets/StackLogos/react.png`,
-      `${store.basePath}/assets/StackLogos/sass.png`,
-      `${store.basePath}/assets/StackLogos/firebase.png`,
+      `${store.basePath}/assets/StackLogos/gsap.jpg`,
+      `${store.basePath}/assets/StackLogos/tailwind.png`,
     ],
-    thumbnail: `${store.basePath}/assets/ProjectThumbnails/z-chat.png`,
-    description: "chat app",
-    link: "https://zenchat.vercel.app/",
-    detailedDescription: "A real-time chat application built with Next.js and Firebase. Features include instant messaging, user authentication, file sharing, and a clean, intuitive interface for seamless communication.",
+    thumbnail: `${store.basePath}/assets/ProjectThumbnails/nimbus.png`,
+    description:
+      "High-Performance Mechanical Keyboard Showcase & 3D Customizer",
+    link: "https://nimbus-keyboards-dun.vercel.app/",
+    detailedDescription:
+      "An immersive, 3D e-commerce landing page and customizer experience built for high-end mechanical keyboards. The project blends modern frontend practices, interactive 3D rendering, and headless content management to deliver a premium user experience.",
     features: [
-      "Real-time Messaging",
-      "User Authentication",
-      "File & Image Sharing",
-      "Emoji Support",
-      "Online Status Indicators",
-      "Message History",
-      "Responsive Design"
+      "Interactive 3D Keyboard Customizer (React Three Fiber)",
+      "Mechanical Switch Playground with realistic press animations",
+      "Stripe payment gateway pipeline & serverless checkout",
+      "Headless CMS integration via Prismic Slices",
+      "Cinematic scrolling & camera transitions via GSAP ScrollTrigger",
+      "Tactile audio-visual feedback synchronization",
     ],
-    techStack: ["Next.js", "React", "Sass", "Firebase", "Firestore"],
-    githubLink: "https://github.com/allindiacoderlife/zenchat",
-    liveDemo: "https://zenchat.vercel.app/",
-    category: "Social"
-  },
-  {
-    title: "Infinity-Readers Club",
-    techs: [
-      `${store.basePath}/assets/StackLogos/solidjs.png`,
-      `${store.basePath}/assets/StackLogos/sass.png`,
-      `${store.basePath}/assets/StackLogos/supabase.png`,
-      `${store.basePath}/assets/StackLogos/firebase.png`,
+    techStack: [
+      "Next.js",
+      "React Three Fiber",
+      "GSAP",
+      "Prismic CMS",
+      "Stripe",
+      "Tailwind CSS",
     ],
-    thumbnail: `${store.basePath}/assets/ProjectThumbnails/e-book.png`,
-    description: "E-book web-app",
-    link: "https://infinity-readers-club.vercel.app/",
-    detailedDescription: "A comprehensive e-book platform that brings readers together in a digital library. Features book discovery, reading progress tracking, community discussions, and personalized recommendations.",
-    features: [
-      "Digital Library Management",
-      "Reading Progress Tracking",
-      "Book Recommendations",
-      "Community Features",
-      "Search & Filter System",
-      "User Reviews & Ratings",
-      "Responsive Reading Interface"
-    ],
-    techStack: ["SolidJS", "Sass", "Supabase", "Firebase"],
-    githubLink: "https://github.com/allindiacoderlife/infinity-readers-club",
-    liveDemo: "https://infinity-readers-club.vercel.app/",
-    category: "Education"
+    githubLink: "https://github.com/allindiacoderlife/nimbus-keyboards.git",
+    liveDemo: "https://nimbus-keyboards-dun.vercel.app/",
+    category: "E-Commerce",
   },
 ];
 
@@ -337,60 +352,83 @@ export const certificates = [
     title: "Full Stack Web Development",
     issuer: "freeCodeCamp",
     date: "2024",
-    description: "Comprehensive course covering HTML, CSS, JavaScript, React, Node.js, and MongoDB",
+    description:
+      "Comprehensive course covering HTML, CSS, JavaScript, React, Node.js, and MongoDB",
     image: `${store.basePath}/assets/certificates/fullstack-cert.svg`, // placeholder path
     credentialId: "fcc-cert-001",
-    skills: ["React", "Node.js", "MongoDB", "Express.js", "HTML", "CSS", "JavaScript"],
-    verifyLink: "https://www.freecodecamp.org/certification/example/responsive-web-design"
+    skills: [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Express.js",
+      "HTML",
+      "CSS",
+      "JavaScript",
+    ],
+    verifyLink:
+      "https://www.freecodecamp.org/certification/example/responsive-web-design",
   },
   {
     title: "React Developer Certification",
     issuer: "Meta",
     date: "2024",
-    description: "Advanced React concepts including hooks, context, state management, and testing",
+    description:
+      "Advanced React concepts including hooks, context, state management, and testing",
     image: `${store.basePath}/assets/certificates/react-cert.jpg`, // placeholder path
     credentialId: "meta-react-001",
-    skills: ["React", "Redux", "React Testing Library", "JavaScript", "TypeScript"],
-    verifyLink: "https://www.coursera.org/account/accomplishments/certificate/example"
+    skills: [
+      "React",
+      "Redux",
+      "React Testing Library",
+      "JavaScript",
+      "TypeScript",
+    ],
+    verifyLink:
+      "https://www.coursera.org/account/accomplishments/certificate/example",
   },
   {
     title: "JavaScript Algorithms and Data Structures",
     issuer: "freeCodeCamp",
     date: "2023",
-    description: "Comprehensive study of algorithms, data structures, and problem-solving techniques",
+    description:
+      "Comprehensive study of algorithms, data structures, and problem-solving techniques",
     image: `${store.basePath}/assets/certificates/js-algorithms-cert.jpg`, // placeholder path
     credentialId: "fcc-js-001",
     skills: ["JavaScript", "Algorithms", "Data Structures", "Problem Solving"],
-    verifyLink: "https://www.freecodecamp.org/certification/example/javascript-algorithms-and-data-structures"
+    verifyLink:
+      "https://www.freecodecamp.org/certification/example/javascript-algorithms-and-data-structures",
   },
   {
     title: "AWS Cloud Practitioner",
     issuer: "Amazon Web Services",
     date: "2024",
-    description: "Foundational knowledge of AWS cloud services and best practices",
+    description:
+      "Foundational knowledge of AWS cloud services and best practices",
     image: `${store.basePath}/assets/certificates/aws-cert.jpg`, // placeholder path
     credentialId: "aws-cp-001",
     skills: ["AWS", "Cloud Computing", "EC2", "S3", "Lambda"],
-    verifyLink: "https://aws.amazon.com/verification"
+    verifyLink: "https://aws.amazon.com/verification",
   },
   {
     title: "MongoDB Developer Certification",
     issuer: "MongoDB University",
     date: "2023",
-    description: "Database design, querying, indexing, and MongoDB best practices",
+    description:
+      "Database design, querying, indexing, and MongoDB best practices",
     image: `${store.basePath}/assets/certificates/mongodb-cert.jpg`, // placeholder path
     credentialId: "mongo-dev-001",
     skills: ["MongoDB", "Database Design", "Aggregation", "Indexing"],
-    verifyLink: "https://university.mongodb.com/certification"
+    verifyLink: "https://university.mongodb.com/certification",
   },
   {
     title: "UI/UX Design Fundamentals",
     issuer: "Google",
     date: "2023",
-    description: "User experience design principles, prototyping, and user research methods",
+    description:
+      "User experience design principles, prototyping, and user research methods",
     image: `${store.basePath}/assets/certificates/ux-cert.jpg`, // placeholder path
     credentialId: "google-ux-001",
     skills: ["UI/UX Design", "Figma", "Prototyping", "User Research"],
-    verifyLink: "https://coursera.org/verify/google-ux"
-  }
+    verifyLink: "https://coursera.org/verify/google-ux",
+  },
 ];

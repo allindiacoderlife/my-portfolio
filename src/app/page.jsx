@@ -10,7 +10,6 @@ const About = React.lazy(() => import("@/components/About"));
 const Biography = React.lazy(() => import("@/components/Biography"));
 const TechnicalSkills = React.lazy(() => import("@/components/TechnicalSkills"));
 const ProjectSection = React.lazy(() => import("@/components/ProjectSection"));
-const Certificate = React.lazy(() => import("@/components/Certificate"));
 const Contact = React.lazy(() => import("@/components/Contact"));
 export default function Home() {
   return (
@@ -40,10 +39,7 @@ export default function Home() {
       <Suspense fallback={<div className="min-h-screen w-full bg-gray-900 animate-pulse" />}>
         <ProjectSection />
       </Suspense>
-      
-      <Suspense fallback={<div className="min-h-screen w-full bg-gray-900 animate-pulse" />}>
-        <Certificate />
-      </Suspense>
+
       
       <Suspense fallback={<div className="min-h-screen w-full bg-gray-900 animate-pulse" />}>
         <Contact />
