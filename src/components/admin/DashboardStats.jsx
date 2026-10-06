@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import { 
   BiFolder, 
-  BiCertification, 
   BiWrench, 
   BiEnvelope, 
   BiServer, 
@@ -72,15 +71,6 @@ export default function DashboardStats({ onNavigateTab }) {
       actionLabel: "View Projects",
     },
     {
-      title: "Certificates",
-      count: stats?.certificates || 0,
-      icon: BiCertification,
-      color: "from-blue-500/20 to-blue-800/10",
-      accent: "#60a5fa",
-      targetTab: "list-cert",
-      actionLabel: "View Certificates",
-    },
-    {
       title: "Skills Configured",
       count: stats?.skills || 0,
       icon: BiWrench,
@@ -134,8 +124,8 @@ export default function DashboardStats({ onNavigateTab }) {
         </div>
       </div>
 
-      {/* Metric Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {/* Metric Cards Grid - 3 cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {statCards.map((card, idx) => {
           const Icon = card.icon;
           return (
@@ -191,13 +181,6 @@ export default function DashboardStats({ onNavigateTab }) {
               <span className="text-xs text-gray-500">+ Project</span>
             </button>
             <button
-              onClick={() => onNavigateTab("add-cert")}
-              className="w-full text-left px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-[#60a5fa]/30 text-sm text-gray-200 hover:text-white transition-all flex items-center justify-between"
-            >
-              <span>Add Certification</span>
-              <span className="text-xs text-gray-500">+ Cert</span>
-            </button>
-            <button
               onClick={() => onNavigateTab("skills")}
               className="w-full text-left px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-[#34d399]/30 text-sm text-gray-200 hover:text-white transition-all flex items-center justify-between"
             >
@@ -210,6 +193,13 @@ export default function DashboardStats({ onNavigateTab }) {
             >
               <span>Edit Bio & Profile</span>
               <span className="text-xs text-gray-500">Edit Info</span>
+            </button>
+            <button
+              onClick={() => onNavigateTab("messages")}
+              className="w-full text-left px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-amber-400/30 text-sm text-gray-200 hover:text-white transition-all flex items-center justify-between"
+            >
+              <span>View Client Inquiries</span>
+              <span className="text-xs text-gray-500">Inbox</span>
             </button>
           </div>
         </div>
@@ -225,16 +215,6 @@ export default function DashboardStats({ onNavigateTab }) {
               <div>
                 <span className="font-medium text-white block">Projects API</span>
                 <span className="text-xs text-gray-400 font-mono">/api/projects</span>
-              </div>
-              <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                Connected
-              </span>
-            </div>
-
-            <div className="p-3.5 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between">
-              <div>
-                <span className="font-medium text-white block">Certificates API</span>
-                <span className="text-xs text-gray-400 font-mono">/api/certificates</span>
               </div>
               <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
                 Connected
@@ -261,7 +241,7 @@ export default function DashboardStats({ onNavigateTab }) {
               </span>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between sm:col-span-2">
+            <div className="p-3.5 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between">
               <div>
                 <span className="font-medium text-white block">Contact Form & Inquiries</span>
                 <span className="text-xs text-gray-400 font-mono">/api/contact & /api/messages</span>

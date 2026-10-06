@@ -7,7 +7,6 @@ import {
   BiLogOut, 
   BiPlus, 
   BiListUl, 
-  BiCertification, 
   BiGridAlt, 
   BiWrench, 
   BiUser, 
@@ -16,9 +15,7 @@ import {
 } from "react-icons/bi";
 import { 
   DynamicAddProject, 
-  DynamicAddCertificate, 
   DynamicProjectList, 
-  DynamicCertificateList,
   DynamicDashboardStats,
   DynamicSkillsManager,
   DynamicAboutEditor,
@@ -68,8 +65,6 @@ const Admin = () => {
     { id: 'overview', label: 'Overview', icon: BiGridAlt },
     { id: 'list-project', label: 'Projects', icon: BiListUl },
     { id: 'add-project', label: 'Add Project', icon: BiPlus },
-    { id: 'list-cert', label: 'Certificates', icon: BiCertification },
-    { id: 'add-cert', label: 'Add Cert', icon: BiPlus },
     { id: 'skills', label: 'Skills', icon: BiWrench },
     { id: 'about', label: 'Profile & Bio', icon: BiUser },
     { id: 'messages', label: 'Inquiries', icon: BiEnvelope, badge: messageCount },
@@ -144,10 +139,6 @@ const Admin = () => {
         {activeTab === 'list-project' && <DynamicProjectList />}
         {activeTab === 'add-project' && (
           <DynamicAddProject onLogout={handleLogout} />
-        )}
-        {activeTab === 'list-cert' && <DynamicCertificateList />}
-        {activeTab === 'add-cert' && (
-          <DynamicAddCertificate onLogout={handleLogout} />
         )}
         {activeTab === 'skills' && <DynamicSkillsManager />}
         {activeTab === 'about' && <DynamicAboutEditor />}

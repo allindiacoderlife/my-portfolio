@@ -23,6 +23,26 @@ const Certificate = () => {
       });
   }, []);
 
+  useEffect(() => {
+    if (selectedCertificate) {
+      document.body.style.overflow = 'hidden';
+      if (typeof window !== 'undefined' && window.__lenis) {
+        window.__lenis.stop();
+      }
+      return () => {
+        document.body.style.overflow = 'unset';
+        if (typeof window !== 'undefined' && window.__lenis) {
+          window.__lenis.start();
+        }
+      };
+    } else {
+      document.body.style.overflow = 'unset';
+      if (typeof window !== 'undefined' && window.__lenis) {
+        window.__lenis.start();
+      }
+    }
+  }, [selectedCertificate]);
+
   return (
     <div
       id="certificates"
@@ -276,12 +296,18 @@ const Certificate = () => {
         </div>
       </div>      {/* Certificate Modal */}
       {selectedCertificate && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div 
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          data-lenis-prevent="true"
+          onWheel={(e) => e.stopPropagation()}
+        >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            className="bg-white dark:bg-gray-900 rounded-2xl p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            className="bg-white dark:bg-gray-900 rounded-2xl p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto overscroll-contain"
+            data-lenis-prevent="true"
+            onWheel={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-start mb-6">
               <div>

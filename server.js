@@ -133,7 +133,6 @@ app.post('/api/auth/login', (req, res) => {
 app.get('/api/stats', async (req, res) => {
   try {
     let projectsCount = mockProjects.length;
-    let certsCount = mockCertificates.length;
     let skillsCount = mockSkills.length;
     let messagesCount = mockMessages.length;
     let dbConnected = false;
@@ -143,7 +142,6 @@ app.get('/api/stats', async (req, res) => {
         const client = await clientPromise;
         const db = client.db('portfolio');
         projectsCount = await db.collection('projects').countDocuments();
-        certsCount = await db.collection('certificates').countDocuments();
         skillsCount = await db.collection('skills').countDocuments();
         messagesCount = await db.collection('messages').countDocuments();
         dbConnected = true;
@@ -156,7 +154,6 @@ app.get('/api/stats', async (req, res) => {
       success: true,
       stats: {
         projects: projectsCount,
-        certificates: certsCount,
         skills: skillsCount,
         messages: messagesCount,
         dbConnected,

@@ -8,6 +8,9 @@ const SmoothScroll = () => {
       autoRaf: false,
     });
 
+    // Expose lenis instance globally so modals can pause/resume scrolling
+    window.__lenis = lenis;
+
     lenis.on("scroll", () => {});
 
     let animationFrameId;
@@ -22,6 +25,7 @@ const SmoothScroll = () => {
     return () => {
       cancelAnimationFrame(animationFrameId);
       lenis.destroy();
+      delete window.__lenis;
     };
   }, []);
   return <></>;
