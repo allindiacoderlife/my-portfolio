@@ -23,7 +23,7 @@ function Contact() {
     setIsLoading(true);
 
     try {
-      const res = await fetch(`${store.basePath}/api/send-email`, {
+      const res = await fetch(`${store.basePath}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -33,11 +33,11 @@ function Contact() {
 
       const data = await res.json();
 
-      if (res.ok) {
-        alert("Email sent successfully!");
+      if (res.ok && data.success) {
+        alert("Message sent successfully! Thank you for reaching out.");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        alert("Failed to send email: " + data.error);
+        alert("Failed to send message: " + (data.error || "Please try again."));
       }
     } catch (error) {
       alert("Something went wrong: " + error.message);

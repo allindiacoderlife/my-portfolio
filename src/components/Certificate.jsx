@@ -1,13 +1,27 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { montserrat_alternates, morona } from "@/lib/fonts";
-import { certificates } from "@/lib/utils";
+import { certificates as defaultCertificates } from "@/lib/utils";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import { FaExternalLinkAlt, FaCalendarAlt, FaCertificate, FaCheck } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const Certificate = () => {
+  const [certificateList, setCertificateList] = useState(defaultCertificates);
   const [selectedCertificate, setSelectedCertificate] = useState(null);
+
+  useEffect(() => {
+    fetch('/api/certificates')
+      .then(res => res.json())
+      .then(data => {
+        if (data.success && Array.isArray(data.certificates) && data.certificates.length > 0) {
+          setCertificateList(data.certificates);
+        }
+      })
+      .catch(err => {
+        console.warn('Using default certificates fallback:', err.message);
+      });
+  }, []);
 
   return (
     <div
@@ -29,7 +43,7 @@ const Certificate = () => {
       <div className="w-full overflow-hidden relative">
         <div className="flex animate-marquee hover:pause-marquee gap-6 md:gap-8">
           {/* First set of certificates */}
-          {certificates.map((cert, index) => (
+          {certificateList.map((cert, index) => (
             <motion.div
               key={`first-${index}`}
               initial={{ opacity: 0, scale: 0.9 }}
@@ -39,11 +53,11 @@ const Certificate = () => {
               className="flex-shrink-0 w-80 md:w-96" // Fixed width for consistent sizing
             >
               <CardContainer className="inter-var h-full">
-                <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-[500px] rounded-xl p-4 md:p-6 border flex flex-col">
+                <CardBody className="bg-black relative group/card hover:shadow-2xl hover:shadow-[#CBACF9]/[0.3] border border-white/[0.2] w-full h-[500px] rounded-xl p-4 md:p-6 flex flex-col">
                   {/* Certificate Header */}
                   <CardItem
                     translateZ="50"
-                    className="text-lg md:text-xl font-bold text-neutral-600 dark:text-white mb-2"
+                    className="text-lg md:text-xl font-bold text-white mb-2"
                   >
                     {cert.title}
                   </CardItem>
@@ -51,7 +65,7 @@ const Certificate = () => {
                   <CardItem
                     as="p"
                     translateZ="60"
-                    className="text-neutral-500 text-sm dark:text-neutral-300 mb-4"
+                    className="text-neutral-300 text-sm mb-4"
                   >
                     {cert.description}
                   </CardItem>
@@ -145,7 +159,7 @@ const Certificate = () => {
           ))}
           
           {/* Duplicate set for infinite scroll */}
-          {certificates.map((cert, index) => (
+          {certificateList.map((cert, index) => (
             <motion.div
               key={`second-${index}`}
               initial={{ opacity: 0, scale: 0.9 }}
@@ -155,11 +169,11 @@ const Certificate = () => {
               className="flex-shrink-0 w-80 md:w-96" // Fixed width for consistent sizing
             >
               <CardContainer className="inter-var h-full">
-                <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-[500px] rounded-xl p-4 md:p-6 border flex flex-col">
+                <CardBody className="bg-black relative group/card hover:shadow-2xl hover:shadow-[#CBACF9]/[0.3] border border-white/[0.2] w-full h-[500px] rounded-xl p-4 md:p-6 flex flex-col">
                   {/* Certificate Header */}
                   <CardItem
                     translateZ="50"
-                    className="text-lg md:text-xl font-bold text-neutral-600 dark:text-white mb-2"
+                    className="text-lg md:text-xl font-bold text-white mb-2"
                   >
                     {cert.title}
                   </CardItem>
@@ -167,7 +181,7 @@ const Certificate = () => {
                   <CardItem
                     as="p"
                     translateZ="60"
-                    className="text-neutral-500 text-sm dark:text-neutral-300 mb-4"
+                    className="text-neutral-300 text-sm mb-4"
                   >
                     {cert.description}
                   </CardItem>

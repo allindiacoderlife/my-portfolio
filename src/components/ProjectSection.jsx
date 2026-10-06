@@ -1,14 +1,28 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { montserrat_alternates, morona } from "@/lib/fonts";
-import { projects } from "@/lib/utils";
+import { projects as defaultProjects } from "@/lib/utils";
 import Card from "@/components/Card";
 import { DynamicProjectModal } from "@/lib/dynamic-imports";
 import { AnimatePresence } from "framer-motion";
 
 const ProjectSection = () => {
+  const [projectList, setProjectList] = useState(defaultProjects);
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/projects")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.projects && Array.isArray(data.projects) && data.projects.length > 0) {
+          setProjectList(data.projects);
+        }
+      })
+      .catch((err) => {
+        console.warn("Using default projects fallback:", err.message);
+      });
+  }, []);
 
   const openModal = (project) => {
     setSelectedProject(project);
@@ -32,8 +46,8 @@ const ProjectSection = () => {
       </div>
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 md:auto-rows-[30rem]">
-        {projects.map((project, index) => (
-          <div key={index} >
+        {projectList.map((project, index) => (
+          <div key={project._id || index} >
            <Card 
              title={project.title} 
              des={project.description} 

@@ -7,7 +7,7 @@ import { FaRegCopy } from "react-icons/fa6";
 import { socials } from "@/lib/utils";
 import { PiFilePdfFill } from "react-icons/pi";
 import { RiChatSmile3Line } from "react-icons/ri";
-import { memo, useMemo } from "react";
+import { memo, useMemo, useState, useEffect } from "react";
 import {
   DynamicGame,
   DynamicInteractiveGradientBg,
@@ -30,6 +30,27 @@ const techStack = {
 };
 
 const BentoGrid = memo(function BentoGrid() {
+  const [aboutData, setAboutData] = useState({
+    address: "Budaun",
+    degree: "BTech. Artificial Intelligence & Data Science",
+    institution: "G L Bajaj Group of Institutions, Mathura",
+  });
+
+  useEffect(() => {
+    fetch("/api/about")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success && data.about) {
+          setAboutData((prev) => ({
+            ...prev,
+            address: data.about.address || prev.address,
+            degree: data.about.degree || prev.degree,
+            institution: data.about.institution || prev.institution,
+          }));
+        }
+      })
+      .catch(() => {});
+  }, []);
   const renderTechStack = useMemo(
     () => ({
       primary: techStack.primary.map((item) => (
@@ -54,7 +75,7 @@ const BentoGrid = memo(function BentoGrid() {
           Address
         </h1>
         <div className="flex flex-col items-center m-auto gap-2">
-          <h1 className="text-2xl font-bold">Budaun</h1>
+          <h1 className="text-2xl font-bold">{aboutData.address}</h1>
           <span className="text-gray-400"></span>
         </div>
         <div
@@ -77,10 +98,10 @@ const BentoGrid = memo(function BentoGrid() {
         </h1>
         <div className="flex flex-col items-center m-auto gap-2">
           <h1 className={`text-2xl font-bold text-center`}>
-            BTech. Artificial Intelligence & Data Science
+            {aboutData.degree}
           </h1>
           <span className="text-center text-gray-400">
-            G L Bajaj Group of Institutions, Mathura
+            {aboutData.institution}
           </span>
           <div
             className="absolute inset-0 opacity-10"

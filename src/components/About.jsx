@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { montserrat_alternates, sacramento, stretch } from "@/lib/fonts";
 import AboutCard from "@/components/ui/AboutCard";
 import StoryAndDetailsCard from "@/components/StoryAndDetailsCard";
@@ -5,6 +6,22 @@ const me = "/assets/profile/me.jpg";
 import UselessFacts from "@/components/UselessFacts";
 
 function About() {
+  const [about, setAbout] = useState({
+    name: "Chirag Saxena",
+    greeting: "Hey mate! I'm",
+  });
+
+  useEffect(() => {
+    fetch("/api/about")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success && data.about) {
+          setAbout((prev) => ({ ...prev, ...data.about }));
+        }
+      })
+      .catch(() => {});
+  }, []);
+
   return (
     <div
       id="about"
@@ -28,13 +45,12 @@ function About() {
         <span
           className={`${sacramento.className} mb-4 md:mb-8 text-2xl mt-9 md:text-4xl`}
         >
-          Hey mate! I&apos;m
+          {about.greeting || "Hey mate! I'm"}
         </span>
         <h1
           className={`${stretch.className} text-4xl mb-5 font-semibold md:text-6xl 2xl:text-7xl md:text-nowrap`}
         >
-          {/* Chirag {"{ca.io}"} */}
-          Chirag Saxena
+          {about.name || "Chirag Saxena"}
         </h1>
         <span
           className={`text-base md:text-xl ${montserrat_alternates.className}`}

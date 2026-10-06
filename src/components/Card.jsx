@@ -6,10 +6,10 @@ import { FaEye, FaExternalLinkAlt } from "react-icons/fa";
 const Card = ({ title, des, img, tech, link, project, onViewDetails }) => {
   return (
     <CardContainer className="inter-var">
-      <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-[#CBACF9]/[0.5] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border ">
+      <CardBody className="bg-black relative group/card hover:shadow-2xl hover:shadow-[#CBACF9]/[0.5] border border-white/[0.2] w-auto sm:w-[30rem] h-auto rounded-xl p-6">
         <CardItem
           translateZ="50"
-          className="text-xl font-bold text-neutral-600 dark:text-white cursor-pointer hover:text-[#CBACF9] transition-colors"
+          className="text-xl font-bold text-white cursor-pointer hover:text-[#CBACF9] transition-colors"
           onClick={onViewDetails}
         >
           {title}
@@ -17,7 +17,7 @@ const Card = ({ title, des, img, tech, link, project, onViewDetails }) => {
         <CardItem
           as="p"
           translateZ="60"
-          className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+          className="text-neutral-300 text-sm max-w-sm mt-2"
         >
           {des}
         </CardItem>
@@ -67,7 +67,7 @@ const Card = ({ title, des, img, tech, link, project, onViewDetails }) => {
                 translateZ={20}
                 as="button"
                 onClick={onViewDetails}
-                className="px-3 py-2 rounded-xl text-xs font-normal dark:text-white bg-white/10 hover:bg-white/20 transition-colors flex items-center gap-1 border border-white/20"
+                className="px-3 py-2 rounded-xl text-xs font-normal text-white bg-white/10 hover:bg-white/20 transition-colors flex items-center gap-1 border border-white/20"
               >
                 <FaEye className="text-xs" />
                 Details
@@ -80,7 +80,7 @@ const Card = ({ title, des, img, tech, link, project, onViewDetails }) => {
               as="a"
               href={link}
               target="__blank"
-              className="px-3 py-2 rounded-xl text-xs font-normal dark:text-white bg-[#CBACF9] text-black hover:bg-[#CBACF9]/90 transition-colors flex items-center gap-1"
+              className="px-3 py-2 rounded-xl text-xs font-normal bg-[#CBACF9] text-black hover:bg-[#CBACF9]/90 transition-colors flex items-center gap-1"
             >
               <FaExternalLinkAlt className="text-xs" />
               Live Demo

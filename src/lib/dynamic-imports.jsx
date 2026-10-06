@@ -128,3 +128,27 @@ export const DynamicCertificateList = dynamic(() => import("../components/admin/
     </div>
   ),
 });
+
+export const DynamicDashboardStats = dynamic(() => import("../components/admin/DashboardStats"), {
+  loading: () => (
+    <div className="w-full max-w-6xl mx-auto p-8 bg-black/20 rounded-lg animate-pulse h-96"></div>
+  ),
+});
+
+export const DynamicSkillsManager = dynamic(() => import("../components/admin/SkillsManager"), {
+  loading: () => (
+    <div className="w-full max-w-6xl mx-auto p-8 bg-black/20 rounded-lg animate-pulse h-96"></div>
+  ),
+});
+
+export const DynamicAboutEditor = dynamic(() => import("../components/admin/AboutEditor"), {
+  loading: () => (
+    <div className="w-full max-w-4xl mx-auto p-8 bg-black/20 rounded-lg animate-pulse h-96"></div>
+  ),
+});
+
+export const DynamicMessagesInbox = dynamic(() => import("../components/admin/MessagesInbox"), {
+  loading: () => (
+    <div className="w-full max-w-5xl mx-auto p-8 bg-black/20 rounded-lg animate-pulse h-96"></div>
+  ),
+});
