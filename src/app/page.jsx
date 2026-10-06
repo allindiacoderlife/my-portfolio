@@ -4,6 +4,7 @@ import Hero from "@/components/Hero.jsx";
 import PatternBackground from "@/components/ui/PatternBackground";
 import ScrollIndicator from "@/components/ui/ScrollIndicator";
 import React, { Suspense } from "react";
+import GsapLoadingScreen from "@/components/GsapLoadingScreen";
 
 // Lazy load components that are not immediately visible
 const About = React.lazy(() => import("@/components/About"));
@@ -14,6 +15,7 @@ const Contact = React.lazy(() => import("@/components/Contact"));
 export default function Home() {
   return (
     <main className="relative flex min-h-screen flex-col items-center overflow-x-hidden">
+      <GsapLoadingScreen />
       <Navbar />
       <PatternBackground />
       <Spotlight className="-top-8 -left-12 h-[500px] md:h-[700px] md:left-40 lg:left-64" />
